@@ -1,0 +1,15 @@
+#cloud-config
+users:
+  - name: web
+    primary_group: web
+    groups: wheel
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC/6pY91hlnkbXJbdr6PeLc991JL4CWpuyceq9MIwm2VfqvvU/F+DD3HxlpWRnU2Vb7jNkuw/8SUZ43ZJRcheJMamALhKGDH8CY9ep8108JT2+zS3EZgW+kULEkwNYVGH0ukzuuvG+n6ND26tPUflONdsRgPKRZ0I3jIPn9uuvb9+SnA5B5hlLwQKSsR89jGHBk0cMAvDnlDNa+LQnRNHTtid0PAqrk87TI3wGRHoMcNo8NADtBskrAUKbAnkA30ZMJGcwAWvB1xgtHuPY8T8I2MO+oB3ZXjfFmC9tLtfjXPWPcc9uWkPScGAkD8BS9XpK2CTvFCN5ZcFv7ftlV7Bl6H8wFUBdOlDLJjMLiBmoIJ8pRiTR5fbTHEL9N6BGkLt03fbK9+/ZqHS6VlVDCgL3LHsciXZG0VDVEIUDOMX3OGiBlNEKfUWTwrXx81KjTZ9WNQl6B0dug/VUXfz6omsY3hoyaoBou7NtI2Lf3cCFhPDBqc41IJtxrONEj+bWRLXk= nathan@NathanPC
+
+package_update: true
+package_upgrade: true
+packages:
+  - nmap
+  - nginx
